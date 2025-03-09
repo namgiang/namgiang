@@ -6,7 +6,7 @@ interface IconProps {
 
 const Icon = ({ icon }: IconProps) => {
   const IconComponent = cloneElement(icon, {
-    className: `size-6 text-gray-500`,
+    className: `size-5 text-gray-500`,
   })
 
   return IconComponent

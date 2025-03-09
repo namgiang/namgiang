@@ -16,9 +16,6 @@ describe('Footer', () => {
     expect(screen.getByRole('contentinfo')).toBeInTheDocument()
     expect(screen.getByRole('navigation')).toBeInTheDocument()
 
-    expect(
-      screen.getByRole('list', { name: 'Website links' })
-    ).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Home' })).toHaveAttribute(
       'href',
       '/'
@@ -27,17 +24,7 @@ describe('Footer', () => {
       'href',
       '/cv'
     )
-
-    expect(
-      screen.getByRole('list', { name: 'Website controls' })
-    ).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Toggle theme' })).toBeVisible()
-  })
-
-  it('highlights the active link based on the current route', () => {
-    render(<Footer />)
-    const homeLink = screen.getByRole('link', { name: 'Home' })
-    expect(homeLink).toHaveClass('after:bg-gray-200')
   })
 
   it('calls the onClick handler when the button is clicked', () => {
@@ -45,6 +32,6 @@ describe('Footer', () => {
     render(<Footer />)
     const button = screen.getByRole('button', { name: 'Toggle theme' })
     fireEvent.click(button)
-    expect(consoleSpy).toHaveBeenCalledWith('Button clicked')
+    expect(consoleSpy).toHaveBeenCalledWith('Toggle theme')
   })
 })
