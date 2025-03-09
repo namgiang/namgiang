@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistSans.className} data-theme={theme}>
       <body className={`p-10 h-screen w-screen`}>
-        <main>{children}</main>
+        <main className="flex items-center justify-center">{children}</main>
         <Footer />
       </body>
     </html>

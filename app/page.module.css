@@ -2,7 +2,6 @@
   --delay: 120ms;
   animation: enter 0.6s ease both;
   animation-delay: calc(var(--delay) * var(--index));
-  margin: 28px 64px;
 }
 
 @keyframes enter {

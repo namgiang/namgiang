@@ -1,9 +1,13 @@
 import Icon from '../Icon/Icon'
-import { DocumentTextIcon, HomeIcon, SunIcon } from '@heroicons/react/24/solid'
+import { HomeIcon, SunIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 
 export const LINKS = [
   { href: '/', label: 'Home', icon: <Icon icon={<HomeIcon />} /> },
-  { href: '/cv', label: 'CV', icon: <Icon icon={<DocumentTextIcon />} /> },
+  {
+    href: '/me',
+    label: 'About me',
+    icon: <Icon icon={<UserCircleIcon />} />,
+  },
 ]
 export const BUTTONS = [
   {
