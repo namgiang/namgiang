@@ -20,7 +20,7 @@ const Name = () => {
 
   return (
     <MotionConfig transition={{ type: 'spring', bounce: 0.4, duration: 2 }}>
-      <AnimatePresence mode="popLayout" initial={false}>
+      <AnimatePresence mode="popLayout">
         <motion.button
           layout
           className={clsx(

@@ -6,9 +6,17 @@ import { motion } from 'motion/react'
 import { usePathname } from 'next/navigation'
 import useHoverState from './useHoverState'
 import { calculateAnimateScale } from './utils'
-import { BUTTONS, LINKS } from './constants'
+import { LINKS } from './constants'
+import Icon from '../Icon/Icon'
+import { MoonIcon, SunIcon } from '@heroicons/react/24/solid'
+import { Theme } from '@/hooks/useThemeToggle'
 
-const Footer = () => {
+interface FooterProps {
+  toggleTheme: () => void
+  theme: Theme | null
+}
+
+const Footer = ({ toggleTheme, theme }: FooterProps) => {
   const currentRoute = usePathname()
   const { currentHoverPosition, onMouseEnter, onMouseLeave } = useHoverState()
 
@@ -36,22 +44,20 @@ const Footer = () => {
               onMouseLeave={onMouseLeave}
             />
           ))}
-          {BUTTONS.map(({ label, icon, onclick }, index) => (
-            <NavItem
-              key={label}
-              label={label}
-              icon={icon}
-              onClick={onclick}
-              animateScale={calculateAnimateScale(
-                currentHoverPosition,
-                index + LINKS.length
-              )}
-              onMouseEnter={() => {
-                onMouseEnter(index + LINKS.length)
-              }}
-              onMouseLeave={onMouseLeave}
-            />
-          ))}
+          <NavItem
+            key="Toggle theme"
+            label="Toggle theme"
+            icon={<Icon icon={theme === 'dark' ? <MoonIcon /> : <SunIcon />} />}
+            onClick={toggleTheme}
+            animateScale={calculateAnimateScale(
+              currentHoverPosition,
+              LINKS.length
+            )}
+            onMouseEnter={() => {
+              onMouseEnter(LINKS.length)
+            }}
+            onMouseLeave={onMouseLeave}
+          />
         </ul>
       </motion.nav>
     </footer>

@@ -6,13 +6,15 @@ jest.mock('next/navigation', () => ({
 }))
 
 describe('Footer', () => {
+  const toggleTheme = jest.fn()
+  const theme = 'light'
   beforeEach(() => {
     const usePathname = jest.requireMock('next/navigation').usePathname
     usePathname.mockReturnValue('/')
   })
 
   it('renders the footer component', () => {
-    render(<Footer />)
+    render(<Footer toggleTheme={toggleTheme} theme={theme} />)
     expect(screen.getByRole('contentinfo')).toBeInTheDocument()
     expect(screen.getByRole('navigation')).toBeInTheDocument()
 
@@ -29,7 +31,7 @@ describe('Footer', () => {
 
   it('calls the onClick handler when the button is clicked', () => {
     const consoleSpy = jest.spyOn(console, 'log')
-    render(<Footer />)
+    render(<Footer toggleTheme={toggleTheme} theme={theme} />)
     const button = screen.getByRole('button', { name: 'Toggle theme' })
     fireEvent.click(button)
     expect(consoleSpy).toHaveBeenCalledWith('Toggle theme')

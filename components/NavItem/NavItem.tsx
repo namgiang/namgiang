@@ -90,6 +90,10 @@ const NavItem = ({
                 </>
               ) : (
                 <motion.button
+                  whileTap={{ y: -30 }}
+                  transition={{
+                    tap: { type: 'spring', bounce: 0.2, duration: 0.6 },
+                  }}
                   layout
                   aria-label={label}
                   className={className}

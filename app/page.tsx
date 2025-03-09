@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div
       className={clsx(
-        'w-full md:w-[60%] flex flex-col gap-5 max-w-[500px]',
+        'p-10 w-full md:w-[60%] flex flex-col gap-5 max-w-[500px]',
         styles.container
       )}
     >
