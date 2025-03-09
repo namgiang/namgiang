@@ -12,8 +12,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const theme = 'dark'
+
   return (
-    <html lang="en" className={GeistSans.className}>
+    <html lang="en" className={GeistSans.className} data-theme={theme}>
       <body className={`p-10 h-screen w-screen`}>
         <main>{children}</main>
         <Footer />
