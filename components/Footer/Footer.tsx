@@ -18,6 +18,8 @@ const Footer = () => {
         layout
         className="flex items-center bg-white pt-4 pb-2.5 pl-1 pr-1 border border-gray-100 shadow-sm"
         style={{ borderRadius: '32px' }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
       >
         <ul className="relative flex items-end w-fit h-[36px]">
           {LINKS.map(({ href, label, icon }, index) => (
