@@ -19,7 +19,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={GeistSans.className} data-theme={theme}>
-      <body className="h-screen w-screen">
+      <body className="p-5 h-screen w-screen">
         <main className="flex items-center justify-center">{children}</main>
         <Footer toggleTheme={toggleTheme} theme={theme} />
       </body>
