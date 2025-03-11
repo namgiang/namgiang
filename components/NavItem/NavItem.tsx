@@ -26,7 +26,7 @@ interface NavButtonProps extends BaseNavItemProps {
 type NavItemProps = NavLinkProps | NavButtonProps
 
 const className =
-  'w-[40px] h-[40px] block bg-gray-100 rounded-full shadow-md p-2.5 flex items-center justify-center'
+  'w-[44px] h-[44px] block bg-gray-100 rounded-full shadow-md p-2.5 flex items-center justify-center'
 
 const NavItem = ({
   animateScale,
@@ -62,9 +62,9 @@ const NavItem = ({
               {href ? (
                 <>
                   <motion.a
-                    whileTap={{ y: -30 }}
+                    whileTap={{ y: -5 }}
                     transition={{
-                      tap: { type: 'spring', bounce: 0.2, duration: 0.6 },
+                      tap: { type: 'spring', bounce: 0.2, duration: 1 },
                     }}
                     layout
                     href={href}
@@ -90,9 +90,9 @@ const NavItem = ({
                 </>
               ) : (
                 <motion.button
-                  whileTap={{ y: -30 }}
+                  whileTap={{ y: -5 }}
                   transition={{
-                    tap: { type: 'spring', bounce: 0.2, duration: 0.6 },
+                    tap: { type: 'spring', bounce: 0.2, duration: 1 },
                   }}
                   layout
                   aria-label={label}

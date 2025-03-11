@@ -25,7 +25,7 @@ const Name = () => {
           layout
           className={clsx(
             styles.container,
-            'w-full md:w-[70%] flex flex-col max-w-[500px] uppercase text-center'
+            'w-full md:w-[70%] mt-10 flex flex-col max-w-[500px] uppercase text-center'
           )}
           onClick={handleClick}
           whileHover={{ transform: 'rotateY(10deg) rotateX(-5deg)' }}

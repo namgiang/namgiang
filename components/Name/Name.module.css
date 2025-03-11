@@ -2,7 +2,7 @@
   -webkit-text-stroke: 0.1em var(--accent-color);
   color: white;
   transform-style: preserve-3d;
-  line-height: 0.95;
+  line-height: 1;
 }
 
 .first {

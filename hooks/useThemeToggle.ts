@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 export type Theme = 'light' | 'dark'
 
-export const useThemeToggle = () => {
+const useThemeToggle = () => {
   const [theme, setTheme] = useState<Theme | null>('light')
 
   useEffect(() => {
@@ -20,13 +20,12 @@ export const useThemeToggle = () => {
   }, [])
 
   const toggleTheme = () => {
-    localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light')
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
+    localStorage.theme = theme === 'dark' ? 'light' : 'dark'
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
+    document.documentElement.classList.toggle('dark')
   }
 
-  const animateToggleTheme = () => {
-    if (!document.startViewTransition) toggleTheme()
-    document.startViewTransition(toggleTheme)
-  }
-  return { theme, toggleTheme: animateToggleTheme }
+  return { theme, toggleTheme }
 }
+
+export default useThemeToggle

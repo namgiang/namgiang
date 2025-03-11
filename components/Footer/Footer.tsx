@@ -9,16 +9,12 @@ import { calculateAnimateScale } from './utils'
 import { LINKS } from './constants'
 import Icon from '../Icon/Icon'
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid'
-import { Theme } from '@/hooks/useThemeToggle'
+import useThemeToggle from '@/hooks/useThemeToggle'
 
-interface FooterProps {
-  toggleTheme: () => void
-  theme: Theme | null
-}
-
-const Footer = ({ toggleTheme, theme }: FooterProps) => {
+const Footer = () => {
   const currentRoute = usePathname()
   const { currentHoverPosition, onMouseEnter, onMouseLeave } = useHoverState()
+  const { theme, toggleTheme } = useThemeToggle()
 
   return (
     <footer className="absolute bottom-6 left-1/2 -translate-x-1/2">
